@@ -1,10 +1,15 @@
-<<<<<<< HEAD
-
 form-validation-js
 ==================
 
 requires jQuery
 =======
-form-validator-js
-=================
->>>>>>> 8d4c2f80720f242c2a557fbe600811833fdc9275
+
+Usage:
+
+simply put onsubmit pointing to vfrm() function like this:
+
+<form onsubmit="return vfrm()" ...>
+...
+</form>
+
+edit "conds" object in order to validate your own elements in the form.
