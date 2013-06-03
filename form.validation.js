@@ -25,7 +25,7 @@ function vfrm() {
 	
 	var conds = {
 		
-		"#categoria"	: { v: function(e) {
+		"#text_elem"	: { v: function(e) {
 							
 							if( e.val() === "0" ) {
 								var n = e.attr('name');
@@ -35,16 +35,7 @@ function vfrm() {
 							}
 						}
 		},
-		"#region"		: { v: function(e) {
-							if( e.val() === "0" ) {
-								var n = e.attr('name');
-								rt.status = false;
-								rt.msg.push(n + error.required);
-								e.addClass("error_elem");
-								}
-						},
-		},
-		"#titulo"		: { v: function(e) {
+		"#title"		: { v: function(e) {
 							if( e.val() == "" ) {
 								var n = e.attr('name');
 								rt.status = false;
@@ -53,7 +44,7 @@ function vfrm() {
 								}
 						},
 		},
-		"#descripcion"		: { v: function(e) {
+		"#textarea"		: { v: function(e) {
 							if( e.val().length < 10 ) {
 								var n = e.attr('name');
 								rt.status = false;
@@ -62,7 +53,7 @@ function vfrm() {
 								}
 						},
 		},
-		"#precio"		: { v: function(e) {
+		"#price"		: { v: function(e) {
 							if( !regexp.price.test(e.val()) ) {
 								var n = e.attr('name');
 								rt.status = false;
@@ -71,7 +62,7 @@ function vfrm() {
 								}
 						},
 		},
-		"#nombre"		: { v: function(e) {
+		"#first_name"		: { v: function(e) {
 							if( e.val().length < 4 ) {
 								var n = e.attr('name');
 								rt.status = false;
@@ -90,7 +81,7 @@ function vfrm() {
 								}
 						},
 		},
-		"#telefono"		: { v: function(e) {
+		"#phone_number"		: { v: function(e) {
 							if( !regexp.number.test(e.val()) ) {
 								var n = e.attr('name');
 								rt.status = false;
@@ -106,6 +97,7 @@ function vfrm() {
 		var e = $(k);
 		this.v(e);
 	});
+
 	$('#detected_errors').empty();
 	if(rt.msg.length > 0)
 		$.each(rt.msg,function(k,li){
